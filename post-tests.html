@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MY POST-TESTS</title>
+  <!-- BOXICONS CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff0f5;
+      padding: 20px;
+    }
+
+    .back-btn {
+      font-size: 1.1rem;
+      color: #5a3825;
+      text-decoration: none;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #5a3825;
+      font-size: 2.5rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 0 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      position: relative;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow: auto;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      font-size: 20px;
+      padding: 12px 15px;
+      border-radius: 45%;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      .gallery img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="javascript:history.back()" class="back-btn"><i class='bx bx-chevron-left'></i>Back</a>
+
+  <h1>Post-Tests</h1>
+
+  <div class="gallery">
+    <img src="./quizzes/POST-TEST/post-test1.jfif" alt="Post-Test 1" onclick="openModal(this.src)">
+    <img src="./quizzes/POST-TEST/post-test2.jfif" alt="Post-Test 2" onclick="openModal(this.src)">
+    <img src="./quizzes/POST-TEST/post-test3.jfif" alt="Post-Test 3" onclick="openModal(this.src)">
+    <img src="./quizzes/POST-TEST/post-test4.jfif" alt="Post-Test 4" onclick="openModal(this.src)">
+    <img src="./quizzes/POST-TEST/post-test5.jpg" alt="Post-Test 5" onclick="openModal(this.src)">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="imgModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">X</button>
+      <img src="" alt="Preview" id="modalImg">
+    </div>
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById("imgModal").style.display = "flex";
+      document.getElementById("modalImg").src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+
+    // Close when clicking outside the image
+    document.getElementById("imgModal").addEventListener("click", function (e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+
+</body>
+</html>

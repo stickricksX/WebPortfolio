@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fefefe;
+    color: black;
+    padding: 1rem;
+  }
+  
+  /* BACK BUTTON */
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #5a3825;
+    margin-bottom: 1rem;
+  }
+  
+  .back-btn i {
+    font-size: 1.1rem;
+    margin-right: 5px;
+  }
+  
+  /* ABOUT STYLE */
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+  }
+  
+  .about-content {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .about-content .about-img {
+    flex: 1 1 300px;
+    text-align: center;
+  }
+  
+  .about-content .about-img img {
+    max-width: 100%;
+    border-radius: 45px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .about-content .about-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  /* ABOUT INFO STYLE */
+  .about-content .info {
+    flex: 1 1 400px;
+    margin-left: 2rem;
+  }
+  
+  .about-content .info h1 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: #5a3825;
+  }
+  
+  .about-content .info p {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+
+  .about-content .info p span {
+    color: #8B4513;
+    font-weight: 500;
+  }
+  
+  /* ABOUT BUTTON STYLE */
+  .btn-about {
+    background-color: #5a3825;
+    color: white;
+    border: 2px solid transparent;
+    padding: 0.7rem 1.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+  }
+  
+  .btn-about:hover {
+    background-color: transparent;
+    color: #5a3825;
+    border-color: #5a3825;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-content .info h1 {
+      font-size: 2rem;
+    }
+  
+    .about-content .about-img img {
+      width: 80%;
+    }
+  
+    .back-btn {
+      font-size: 1.5rem;
+    }
+  }
+  

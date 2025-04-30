@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MY LONG QUIZ</title>
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff0f5;
+      padding: 20px;
+    }
+
+    .back-btn {
+      font-size: 1.1rem;
+      color: #5a3825;
+      text-decoration: none;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #5a3825;
+      font-size: 2.5rem;
+    }
+
+    .quiz-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .quiz-img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .quiz-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      position: relative;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 90%;
+      max-height: 80vh;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal-content img {
+      width: 100%;       /* Change to a fixed width if needed, e.g. 600px */
+      max-height: 70vh;  /* Prevent it from overflowing vertically */
+      object-fit: contain; /* Ensure full image is shown without stretching */
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .quiz-img {
+        max-width: 90%;
+      }
+      .modal-content {
+        max-width: 95%;
+        padding: 5px;
+      }
+      .modal-content img {
+        max-height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="javascript:history.back()" class="back-btn"><i class='bx bx-chevron-left'></i>Back</a>
+
+  <h1>Long Quiz</h1>
+
+  <div class="quiz-container">
+    <img src="./quizzes/LONG QUIZ/long_quiz.jfif" alt="Long Quiz" class="quiz-img" onclick="openModal(this.src)">
+  </div>
+
+  <!-- Modal to display image preview -->
+  <div class="modal" id="imgModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">X</button>
+      <img src="" alt="Preview" id="modalImg">
+    </div>
+  </div>
+
+  <script>
+    // Open modal with clicked image
+    function openModal(src) {
+      document.getElementById("modalImg").src = src;
+      document.getElementById("imgModal").style.display = "flex";
+    }
+
+    // Close modal
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside the image
+    document.getElementById("imgModal").addEventListener("click", function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // 💡 TIP: You can adjust interactivity by:
+    // - Changing `transform: scale()` value for hover
+    // - Adding more quiz images in the `.quiz-container`
+    // - Replacing `onclick="openModal(...)"` with links if needed
+  </script>
+
+</body>
+</html>

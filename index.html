@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MY PORTFOLIO</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <!-- BOXICONS CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <!-- Header with Hamburger -->
+  <header class="header">
+    <a href="#" class="logo">ericka g.</a>
+    <i class='bx bx-menu' id="menu-icon"></i>
+    <nav class="navbar" id="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="home">
+    <div class="home-content">
+      <h3>Hi!</h3>
+      <h1>I'm <span>Ericka</span></h1>
+      <p>An IT student with a love for coding, designing, and problem-solving.</p>
+      <div class="btn-box">
+        <a href="projects.html"><button class="btn-1">Projects</button></a>
+        <a href="./about/GABUTIN_CV.pdf"><button class="btn-2">Download CV</button></a>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="./images/front_pic.jpg" alt="Ericka's Picture" />
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+<section id="contacts" class="contact">
+  <h2>Get in Touch</h2>
+  <p>Have a question or want to work together? Fill out the form below!</p>
+
+  <form action="https://formspree.io/f/xgvaqgra" method="POST" class="contact-form">
+    <div class="form-group">
+      <input type="text" placeholder="Your Name" name="name" required>
+      <input type="email" placeholder="Your Email" name="email" required>
+    </div>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn-1">Send Message</button>
+    <p id="form-message" class="form-message"></p>
+  </form>
+</section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column contact-info">
+        <h3>Contact Info</h3>
+        <p><strong>Email:</strong> erickagabutin@gmail.com</p>
+        <p><strong>Location:</strong> Paliparan III, Dasmarinas City, Cavite</p>
+      </div>
+      <div class="footer-column social-links">
+        <h3>Follow Me</h3>
+        <a href="https://www.facebook.com/yourprofile" target="_blank" title="Facebook">
+          <i class="bx bxl-facebook"></i>
+        </a>
+        <a href="https://www.github.com/yourprofile" target="_blank" title="GitHub">
+          <i class="bx bxl-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ericka Gabutin. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
