@@ -12,5 +12,5 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   const message = document.getElementById('form-message');
   message.textContent = 'Message sent successfully!';
   this.reset(); // Clear form
-  setTimeout(() => (message.textContent = ''), 3000); // Clear success message after 3s
+  setTimeout(() => (message.textContent = ''), 3000);
 });
