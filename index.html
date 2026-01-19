@@ -215,26 +215,65 @@ body {
 }
 
 /* ================= CONTACT SECTION ================= */
+.contact-section {
+  padding: 80px 20px;
+  background-color: var(--bg-section);
+}
+
+.contact-section .container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
 .contact-form {
-  background: var(--bg-color);
-  border: 2px solid var(--accent);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: background 0.3s ease, border-color 0.3s ease;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.contact-form .form-control {
-  background: transparent;
-  color: var(--text-color);
-  border: 1px solid var(--accent);
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-primary);
 }
 
-.contact-form .form-control::placeholder {
-  color: var(--secondary-text);
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: #5a3419;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.contact-form .form-control:focus {
-  border-color: var(--btn-project-bg);
-  box-shadow: none;
+.contact-form button:hover {
+  background: #c6a46a;
+}
+
+#form-status {
+  margin-top: 15px;
+  font-size: 0.9rem;
 }
 
 /* ================= FOOTER ================= */
@@ -319,7 +358,7 @@ body {
         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contacts</a></li>
         <li class="nav-item">
           <button class="theme-toggle" onclick="toggleTheme()">
             <i id="theme-icon" class="bi bi-moon-fill"></i>
@@ -384,7 +423,7 @@ body {
         </p>
 
         <!-- Action Button -->
-        <a href="#contacts" class="btn btn-projects rounded-pill px-4 py-2">
+        <a href="#contact" class="btn btn-projects rounded-pill px-4 py-2">
           Contact Me
         </a>
       </div>
@@ -431,48 +470,25 @@ body {
 </section>
 
 <!-- ================= CONTACT SECTION ================= -->
-<section id="contacts" class="py-5">
-  <div class="container">
-
-    <!-- Section Header -->
-    <div class="text-center mb-5">
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="text-center mb-4">
       <h2 class="fw-bold">Contact Me</h2>
-      <p class="text-secondary">Feel free to reach out for collaboration, questions, or opportunities.</p>
+      <p class="text-secondary">
+        Let’s connect — feel free to send me a message.
+      </p>
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-
-        <form 
-          action="https://formspree.io/f/xgvaqgra"
-          method="POST"
-          class="contact-form p-4 rounded"
-        >
-
-          <div class="row g-3">
-            <!-- Name -->
-            <div class="col-md-6">
-              <input type="text" name="Name" class="form-control" placeholder="Your Name" required>
-            </div>
-
-            <!-- Message -->
-            <div class="col-12">
-              <textarea name="Message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="col-12 text-center">
-              <button type="submit" class="btn btn-projects rounded-pill px-5 py-2">
-                Send Message
-              </button>
-            </div>
-          </div>
-
-        </form>
-
+<div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+    <form id="contact-form" class="contact-form">
+      <input type="text" name="user_name" placeholder="Your Name" required>
+      <input type="email" name="user_email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="form-status"></p>
+    </form>
       </div>
-    </div>
-
   </div>
 </section>
 
@@ -517,6 +533,12 @@ body {
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<!-- My EmailJS File -->
+<script src="contacts.js"></script>
 
 <script>
 /* THEME TOGGLE */
